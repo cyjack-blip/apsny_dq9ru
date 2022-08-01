@@ -1,0 +1,45 @@
+{% extends "template.html" %}
+{% block content %}
+
+
+        <div class="uk-grid blog_article" data-uk-grid-margin>
+            <div class="uk-width-medium-3-4">
+                <div class="md-card">
+                    <div class="md-card-content large-padding">
+                        <div class="uk-article">
+                            <h1 class="uk-article-title">{{item.title}}</h1>
+                            <p class="uk-article-meta">
+                                {{item.article_time}}
+                                <br>Источник: <a href="#">{{item.source}}</a>
+                            </p>
+                            {% if item.announce %}
+                            <p class="uk-article-lead">{{item.announce}}</p>
+                            {% endif %}
+                            {% if item.img %}
+                                <figure class="uk-thumbnail uk-thumbnail-large thumbnail_left">
+                                    <img src="{{item.img}}" alt="">
+                                    <figcaption class="uk-thumbnail-caption">{{item.title}}</figcaption>
+                                </figure>
+                            {% endif %}
+                          {{item.article|safe}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-width-medium-1-4">
+                <h5 class="uk-margin-small-bottom uk-text-upper  uk-margin-large">Tags</h5>
+                <div class="blog_tags">
+                    {% for tag in item.tags %}
+                    <a href="#" class="uk-badge">{{tag}}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+{% endblock %}
+
+{% block title %}
+{{item.title}} :: Новости Абхазии
+{% endblock %}
+
+{% block description %}{{item.announce}}{% endblock %}
