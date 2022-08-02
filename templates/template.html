@@ -94,24 +94,5 @@
     <!-- altair common functions/helpers -->
     <script src="/static/assets/js/altair_lp_common.js"></script>
 
-    <script>
-        $(function() {
-            if(isHighDensity()) {
-                $.getScript( "/static/assets/js/custom/dense.min.js", function(data) {
-                    // enable hires images
-                    if (typeof $.fn.dense !== "undefined") {
-                        $('img')
-                            // set resolution cap at "2"
-                            .attr('data-dense-cap',2)
-                            .dense({
-                                glue: "@",
-                                ping: false
-                            });
-                    }
-                });
-            }
-        });
-    </script>
-
 </body>
 </html>
