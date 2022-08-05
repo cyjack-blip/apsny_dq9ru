@@ -53,15 +53,29 @@
         </div>
     </header><!-- main header end -->
     <div id="page_content">
-        <div id="page_content_inner">
+        <div id="page_content_inner" style="padding: 12px 12px 100px;">
 {% block content %}
 {% endblock %}
         </div>
     </div>
 
-    <footer id="footer">
-        &copy; 2022 <a href="https://amra-club.com" target="_blank">АМРА-КЛУБ</a>. Весь контент собран из открытых источников и принадлежит авторам.
-        <span class="uk-float-right">
+    <footer id="footer" style="line-height: normal; min-height: 31px; padding-right: 31px;">
+        <small>&copy; 2022, <a href="https://amra-club.com" target="_blank">АМРА-КЛУБ</a>. Весь контент собран из открытых источников и принадлежит авторам.</small>
+        <span class="uk-float-right" style="margin: 0;
+  position: absolute;
+  top: 50%; right: 10px;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);">
+<!--LiveInternet counter--><a href="https://www.liveinternet.ru/click"
+target="_blank"><img id="licnt1260" width="15" height="15" style="border:0"
+title="LiveInternet"
+src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+alt=""/></a><script>(function(d,s){d.getElementById("licnt1260").src=
+"https://counter.yadro.ru/hit?t44.1;r"+escape(d.referrer)+
+((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+(s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+";h"+escape(d.title.substring(0,150))+";"+Math.random()})
+(document,screen)</script><!--/LiveInternet-->
 
         </span>
     </footer>
@@ -93,6 +107,47 @@
     <script src="/static/assets/js/uikit_custom.min.js"></script>
     <!-- altair common functions/helpers -->
     <script src="/static/assets/js/altair_lp_common.js"></script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(89847598, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/89847598" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QVD56MZVF2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QVD56MZVF2');
+</script>
+
+<!-- Rating Mail.ru counter -->
+<script type="text/javascript">
+var _tmr = window._tmr || (window._tmr = []);
+_tmr.push({id: "3257713", type: "pageView", start: (new Date()).getTime()});
+(function (d, w, id) {
+  if (d.getElementById(id)) return;
+  var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+  ts.src = "https://top-fwz1.mail.ru/js/code.js";
+  var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+  if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+})(document, window, "topmailru-code");
+</script><noscript><div>
+<img src="https://top-fwz1.mail.ru/counter?id=3257713;js=na" style="border:0;position:absolute;left:-9999px;" alt="Top.Mail.Ru" />
+</div></noscript>
+<!-- //Rating Mail.ru counter -->
 
 </body>
 </html>
