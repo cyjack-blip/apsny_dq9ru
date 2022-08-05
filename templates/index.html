@@ -8,7 +8,12 @@
         <div class="md-card">
             <div class="md-card-content small-padding">
                 <a href="/news/{{item.slug}}">
+                    {% if item.img %}
                     <img src="{{item.img}}" alt="" class="blog_list_teaser_image">
+                    {% endif %}
+                    {% if item.embed %}
+                    <img src="{{item.embed[0]|embed_cover|safe}}" alt="" class="blog_list_teaser_image">
+                    {% endif %}
                 </a>
                 <div class="blog_list_teaser">
                     <h2 class="blog_list_teaser_title">{{item.title}}</h2>

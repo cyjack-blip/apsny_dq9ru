@@ -1,8 +1,10 @@
 from flask import Flask, render_template, send_from_directory, request
 import mvc.mvc as mvc
+from mvc.lib import *
 
 app = Flask(__name__)
-
+app.jinja_env.filters['embed'] = lambda u: get_embed_html_object(u)
+app.jinja_env.filters['embed_cover'] = lambda u: get_ebbed_object_cover(u)
 
 @app.route("/")
 def main_page():

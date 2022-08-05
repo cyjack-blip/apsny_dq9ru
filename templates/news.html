@@ -21,6 +21,12 @@
                                     <figcaption class="uk-thumbnail-caption">{{item.title}}</figcaption>
                                 </figure>
                             {% endif %}
+                            {% if item.embed %}
+                            <figure class="uk-thumbnail thumbnail_left">
+                                {{item.embed[0]|embed|safe}}
+                                <figcaption class="uk-thumbnail-caption">{{item.title}}</figcaption>
+                            </figure>
+                            {% endif %}
                           {{item.article|safe}}
                         </div>
                     </div>
