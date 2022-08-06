@@ -7,7 +7,7 @@
     <div>
         <div class="md-card">
             <div class="md-card-content small-padding">
-                <a href="/news/{{item.slug}}">
+                <a href="/news/{{item.slug}}/">
                     {% if item.img %}
                     <img src="{{item.img}}" alt="" class="blog_list_teaser_image">
                     {% endif %}
@@ -24,7 +24,7 @@
                     <div class="blog_list_footer_info">
                         <span class="uk-margin-right"><small>Источник: {{item.source}}</small></span>
                     </div>
-                    <a href="/news/{{item.slug}}" class="md-btn md-btn-small md-btn-flat md-btn-flat-primary uk-float-right">Read more</a>
+                    <a href="/news/{{item.slug}}/" class="md-btn md-btn-small md-btn-flat md-btn-flat-primary uk-float-right">Read more</a>
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
 
 {% endfor %}
 </div>
-
+{{ pagination }}
 {% endblock %}
 
 {% block title %}
