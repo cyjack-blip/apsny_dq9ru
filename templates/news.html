@@ -13,7 +13,7 @@
                                 <br>Источник: <a href="{{item.link}}">{{item.source}}</a>
                             </p>
                             {% if item.announce %}
-                            <p class="uk-article-lead">{{item.announce}}</p>
+                            <p class="uk-article-lead">{{item.announce|safe}}</p>
                             {% endif %}
                             {% if item.img %}
                                 <figure class="uk-thumbnail thumbnail_left">
