@@ -9,7 +9,7 @@
                         <div class="uk-article">
                             <h1 class="uk-article-title">{{item.title}}</h1>
                             <p class="uk-article-meta">
-                                {{item.article_time}}
+                                {{item.article_time|timezone}}
                                 <br>Источник: <a href="{{item.link}}">{{item.source}}</a>
                             </p>
                             {% if item.announce %}
