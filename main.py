@@ -33,7 +33,7 @@ def static_from_root():
 @app.route('/news/<slug>/', methods=["POST", "GET"])
 def news(slug):
     item = mvc.read_item(slug)
-    item['article_time'] = fix_timezone(item['article_time'])
+    # item['article_time'] = fix_timezone(item['article_time'])
     return render_template('news.html', item=item)
 
 
