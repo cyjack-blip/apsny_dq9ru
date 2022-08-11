@@ -6,9 +6,9 @@ from datetime import timedelta
 
 
 def fix_timezone(date):
-    if date.tzinfo:
-        return date
-    date += timedelta(hours=3)
+    # if date.tzinfo:
+    #     return date
+    # date += timedelta(hours=3)
     return date.astimezone(pytz.timezone('Europe/Moscow'))
 
 
