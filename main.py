@@ -7,6 +7,7 @@ from flask_paginate import Pagination, get_page_parameter
 app = Flask(__name__)
 app.jinja_env.filters['embed'] = lambda u: get_embed_html_object(u)
 app.jinja_env.filters['embed_cover'] = lambda u: get_ebbed_object_cover(u)
+app.jinja_env.filters['timezone'] = lambda u: fix_timezone(u)
 
 
 @app.route("/", defaults={'page_id': 1}, methods=["POST", "GET"])
@@ -16,6 +17,7 @@ def main_page(page_id):
     per_page = 20
     mongo = mvc.Mongo()
     items = mongo.read_items(int(page_id), per_page)
+    items = fix_timezones(items)
     total = mongo.get_total_items()
     pagination = Pagination(page=page_id, total=total, per_page=per_page, href="/index/{0}/", css_framework='materialize')
     pagination = pagination.links.replace('pagination', 'uk-pagination uk-margin-medium-top').replace('disabled', 'uk-disabled').replace('active', 'uk-active')
@@ -31,6 +33,7 @@ def static_from_root():
 @app.route('/news/<slug>/', methods=["POST", "GET"])
 def news(slug):
     item = mvc.read_item(slug)
+    item['article_time'] = fix_timezone(item['article_time'])
     return render_template('news.html', item=item)
 
 

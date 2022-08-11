@@ -1,7 +1,21 @@
 import vk_api
 from credentials import vk_token
 import re
+import pytz
+from datetime import timedelta
 
+
+def fix_timezone(date):
+    if date.tzinfo:
+        return date
+    date += timedelta(hours=3)
+    return date.astimezone(pytz.timezone('Europe/Moscow'))
+
+
+def fix_timezones(items):
+    for i, m in enumerate(items):
+        items[i]['article_time'] = fix_timezone(m['article_time'])
+    return items
 
 class vkapi:
     def __init__(self):
