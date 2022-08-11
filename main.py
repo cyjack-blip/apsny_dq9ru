@@ -17,7 +17,7 @@ def main_page(page_id):
     per_page = 20
     mongo = mvc.Mongo()
     items = mongo.read_items(int(page_id), per_page)
-    items = fix_timezones(items)
+    # items = fix_timezones(items)
     total = mongo.get_total_items()
     pagination = Pagination(page=page_id, total=total, per_page=per_page, href="/index/{0}/", css_framework='materialize')
     pagination = pagination.links.replace('pagination', 'uk-pagination uk-margin-medium-top').replace('disabled', 'uk-disabled').replace('active', 'uk-active')
