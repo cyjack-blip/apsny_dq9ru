@@ -9,7 +9,7 @@
             <div class="md-card-content small-padding">
                 <a href="/news/{{item.slug}}/">
                     {% if item.img %}
-                    <img src="{{item.img}}" alt="" class="blog_list_teaser_image">
+                    <img src="{{item.img}}" alt="" class="blog_list_teaser_image" loading="lazy">
                     {% endif %}
                     {% if item.embed %}
                     <img src="{{item.embed[0]|embed_cover|safe}}" alt="" class="blog_list_teaser_image" loading="lazy">
