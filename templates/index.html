@@ -12,7 +12,7 @@
                     <img src="{{item.img}}" alt="" class="blog_list_teaser_image">
                     {% endif %}
                     {% if item.embed %}
-                    <img src="{{item.embed[0]|embed_cover|safe}}" alt="" class="blog_list_teaser_image">
+                    <img src="{{item.embed[0]|embed_cover|safe}}" alt="" class="blog_list_teaser_image" loading="lazy">
                     {% endif %}
                 </a>
                 <div class="blog_list_teaser">

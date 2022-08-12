@@ -38,7 +38,7 @@ def get_embed_html_object(source):
     vid = re.search(r'&id=(.+?)&', source, flags=re.DOTALL)[1]
     my_vk_api = vkapi()
     video = my_vk_api.get_video(oid, vid)
-    embed = f'<a href="https://vk.com/video{oid}_{vid}"><img src="{video}"></a>'
+    embed = f'<a href="https://vk.com/video{oid}_{vid}"><img src="{video}" loading="lazy"></a>'
     return embed
 
 
